@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BookingContoller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\OtpController;
 use App\Http\Controllers\VenueController;
@@ -12,7 +13,7 @@ Route::get('/otp-login', function () {
 
 Route::get('/venues', [VenueController::class, 'index'])->name('venues.index');
 Route::get('/venues/{venue}/slots', [VenueController::class, 'showSlots'])->name('venues.slots');
-
+Route::post('/bookslot',[BookingContoller::class,'bookSlot'])->name('book.slot');
 
 // Handle OTP request (from login form)
 Route::post('/request-otp', [OtpController::class, 'requestOtp'])->name('otp.request');

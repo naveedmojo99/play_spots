@@ -12,7 +12,8 @@
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
         <div class="container">
-            <a class="navbar-brand" href="#">PlaySpots</a>
+        <a class="navbar-brand" href="{{ route('venues.index') }}">PlaySpots</a>
+
         </div>
     </nav>
 
