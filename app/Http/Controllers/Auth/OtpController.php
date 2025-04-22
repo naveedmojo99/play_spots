@@ -33,6 +33,8 @@ class OtpController extends Controller
             'name' => $request->name ?? 'Guest',
         ]);
 
+        
+
         // Redirect user to OTP verification page
         return redirect()->route('otp.verify');
     }
@@ -77,6 +79,6 @@ class OtpController extends Controller
         session()->forget(['mobile', 'name']);
     
         // Redirect to home or dashboard
-        return redirect()->route('home')->with('success', 'Login successful!');
+        return redirect()->intended(route('home'))->with('success', 'OTP verified and logged in!');
     }
 }
