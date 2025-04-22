@@ -9,7 +9,7 @@
                 <th scope="col">Rank</th>
                 <th scope="col">Venue Name</th>
                 <th scope="col">Total Bookings</th>
-                <th scope="col">Monthly Bookings</th>
+                <th scope="col">Current Month Bookings</th>
                 <th scope="col">Category</th>
             </tr>
         </thead>

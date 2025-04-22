@@ -17,12 +17,11 @@ class ReportsController extends Controller
         // Add monthly booking count, category and rank
         foreach ($venues as $venue) {
             $monthlyCount = DB::table('bookings')
-                ->where('venue_id', $venue->id)
-                ->whereRaw("DATE_FORMAT(created_at, '%Y-%m') = ?", [$month])
-                ->count();
-    
-            $venue->monthly_bookings = $monthlyCount;
-    
+            ->where('venue_id', $venue->id)
+            ->whereRaw("DATE_FORMAT(booking_date, '%Y-%m') = ?", [$month]) // Change 'created_at' to 'booking_date'
+            ->count();
+
+             $venue->monthly_bookings = $monthlyCount;
             // Category assignment
             if ($monthlyCount > 15) {
                 $venue->category = 'A';
