@@ -2,10 +2,16 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\OtpController;
+use App\Http\Controllers\VenueController;
 // Show OTP request form
 Route::get('/otp-login', function () {
     return view('otp_login');
 });
+
+
+
+Route::get('/venues', [VenueController::class, 'index'])->name('venues.index');
+Route::get('/venues/{venue}/slots', [VenueController::class, 'showSlots'])->name('venues.slots');
 
 
 // Handle OTP request (from login form)

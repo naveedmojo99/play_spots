@@ -11,12 +11,19 @@ class Venue extends Model
 
     protected $fillable = [
         'name',
-        'opening_time',
-        'closing_time',
+        'location',
+        'description',
+      'opening_time',
+        'closing_time',  
     ];
 
     public function bookings()
     {
         return $this->hasMany(Booking::class);
     }
+    public function slots()
+    {
+    return $this->hasMany(Slot::class);
+    }
+
 }
