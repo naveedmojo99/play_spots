@@ -3,8 +3,9 @@ project setup
 backend=laravel
 front-end=blade
 
-1)composer install
-2)php artisan migrate:fresh --seed
+1)git clone https://github.com/naveedmojo99/play_spots.git
+2)composer update
+3)php artisan migrate:fresh --seed
 
 routes http://127.0.0.1:8000/venues main home route.
 add mobile number otp authentication.
